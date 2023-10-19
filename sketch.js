@@ -69,10 +69,9 @@ function drawcar() {
   line(300, 99, 240, 99);
 
   let spacing = 200;
-  for (x = 0; x < 3000; x += spacing);
-
+  for (x = 0; x < 3000; x += spacing){
   line(x, 99, x+200, 99);
-
+}
 }
 
 function drawmiddledog() {
