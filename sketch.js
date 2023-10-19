@@ -209,9 +209,11 @@ function drawtheveryrightdog() {
   strokeWeight('3');
   stroke("black");
   fill(238, 196, 30);
-  rect(1096, 320, 23, 38, 20, 150, 10, 50); //body
+  rect(1096, 320, 230, 370, 200, 150, 50, 50); //body
   rect(1096, 120, 230, 260); //head
   circle(1200, 330, 230); //facemouse
+
+  
 
   fill(65, 33, 5);
   circle(1150, 190, 57); //left eye
