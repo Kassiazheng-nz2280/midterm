@@ -9,9 +9,11 @@
 //   ellipse(x, y, diameter/2, diameter/2);
 
 // }
+dogblack = true;
+carlocation = 0;
+carmovingright = true;
 
-
-  function setup() {
+function setup() {
   createCanvas(windowWidth, windowHeight);
   angleMode(DEGREES);
 }
@@ -57,36 +59,46 @@ function drawtheveryleftdog() {
 }
 
 function drawcar() {
-  circle(320, 100, 23);
-  circle(370, 100, 23);
-  square(308, 145, 75);
-  line(345, 100, 345, 145);
-  // push();
-  // line(1, 99, 1500, 99); //linebehind
-  // drawingContext.setLineDash([5, 15]);
-  // pop();
+  push();
+  translate(carlocation,0); 
+  circle(20, 100, 23);
+  circle(70, 100, 23);
+  square(8, 145, 75);
+  line(45, 100, 45, 145);
+  drawclock();
+  pop();
   fill('black');
-  line(300, 99, 240, 99);
-
-  let spacing = 200;
+strokeWeight(3);
+  let spacing = 10;
   for (x = 0; x < 3000; x += spacing){
-  line(x, 99, x+200, 99);
+  line(x, 99, x+5, 99);
+
 }
 }
 
 function drawmiddledog() {
   strokeWeight('3');
   stroke("black");
-  fill(28, 12, 2);
+  if (dogblack == true) {
+    fill(28, 12, 2);
+  } else {
+    fill('white');
+  }
+ 
   ellipse(width / 2, 360, 140, 200); //body
 
   //ear
   fill(71, 44, 28);
   triangle(656, 139, 673, 55, 714, 105);
   triangle(731, 105, 751, 53, 776, 131);
-  fill(48, 44, 42);
   strokeWeight('3');
+  if (dogblack == true) {
+    fill(48, 44, 42);
+  } else {
+    fill('white');
+  }
   ellipse(width / 2, 210, 170, 210); //middle dog head
+  
   rect(669, 214, 100, 100, 40); //mouse
   line(710, 286, 733, 286); // mouseline
   strokeWeight(3);
@@ -103,6 +115,11 @@ function drawmiddledog() {
   ellipse(width / 2.1, 180, 12, 12); //eyeinsideleft
   ellipse(width / 1.94, 180, 12, 12); //eyeinsideright
 
+  if (dogblack == true) {
+    fill(28, 12, 2);
+  } else {
+    fill('white');
+  }
   rect(730, 445, 11, 110); //leg
   rect(758, 427, 16, 150); //leg
   rect(700, 445, 11, 110); //leg
@@ -228,13 +245,14 @@ function drawtheveryrightdog() {
 }
 
 function drawclock(){
+
   strokeWeight(2);  
   fill(68, 92, 2); //body cicle clock 
-  ellipse(346, 183, 65, 65);
+  ellipse(46, 183, 65, 65);
   
   strokeWeight(2);
   fill('pink'); //inside cicle clock
-  ellipse(346, 183, 10, 10);
+  ellipse(46, 183, 10, 10);
 
     // Calculate the current time
     let hr = hour();
@@ -242,7 +260,7 @@ function drawclock(){
     let sec = second();
   
     push();
-  translate(347, 183); // Move the origin to the center
+  translate(47, 183); // Move the origin to the center
   noFill();
   stroke('black');
   strokeWeight(4);
@@ -270,30 +288,55 @@ function drawclock(){
   let secAngle = map(sec, 0, 60, 0, 360); // Calculate second hand angle
   rotate(secAngle);
   line(0, 0, 28, 0);
+  pop();
 }
 
 
 function draw() {
   drawglasses();
+if (carmovingright == true) {
+  carlocation++;
+}else{
+  carlocation--;
+}
+if (carlocation > width){
+  carmovingright = false;
+} 
+if (carlocation < 0){
+  carmovingright = true;
+} 
   drawcar();
+
   drawmiddledog();
   drawforthdog();
   drawtheveryrightdog();
   drawtheveryleftdog();
   draw2dog();
-  drawclock();
+  
 
   stroke("black");
   fill("white");
 
   //cookie
-drawcookie(mouseX,mouseX, mouseY, mouseY);
+// drawcookie(mouseX,mouseX, mouseY, mouseY);
 
 
 }
 
 function mousePressed() {
-  console.log(mouseX, mouseY);
+  if(dogblack == false){
+    dogblack = true;
+  }
+else {
+  dogblack = false;
+}
+  console.log(dogblack);
 }
 
+// function mousePressed() {
+
+
+
+//   console.log(mouseX, mouseY);
+// }
 
