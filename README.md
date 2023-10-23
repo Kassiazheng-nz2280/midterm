@@ -31,4 +31,5 @@ I also searched online a new quick way, it works with others but not the car, I 
   // drawingContext.setLineDash([5, 15]);
   // pop();
 
+The most hard things is how to move the eye with the mouse. 
 
