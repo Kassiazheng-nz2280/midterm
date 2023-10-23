@@ -22,6 +22,7 @@ This is my ideal collage
 This is my plan with how to draw in coding 
 ![D0d4S4.jpg](https://imgpile.com/images/D0d4S4.jpg)
 
+first week - I try to draw all the image and think about the techniques I want to use and where to location them 
 I had diffuclty doing the car in the back
 I try to use for loops we learned before, but there are some issues
 ![DQzOxX.jpg](https://imgpile.com/images/DQzOxX.jpg)
@@ -30,6 +31,7 @@ I also searched online a new quick way, it works with others but not the car, I 
   // line(1, 99, 1500, 99); //linebehind
   // drawingContext.setLineDash([5, 15]);
   // pop();
+second week - The most hard things is how to move the eye with the mouse. And I let the car moved and come back.
+third week - I finished that when I clicked the middle dog it can changed the color. I also leanred how to add the image, I add a imgae as a backgroung also the dog treat on the mouse. And I fixed the frame of the glasses. And I fixed the location of the middle dog, instead of width/2, I give them the real mearsurment. So when I changed the size of the screem, the part of the dog will not be able to move apart. They will stay in the same place.
 
-The most hard things is how to move the eye with the mouse. 
 
